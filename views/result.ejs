@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <style>
+    form {
+      padding: 30px 30%;
+    }
+    tr {
+      text-align: center;
+    }
+    table {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="display-2" style="text-align: center;">Weather App</h1>
+  <form action="\" method="POST">
+    <div class="mb-3">
+      <label for="city" class="form-label">Enter City</label>
+      <input type="text" class="form-control" name="city">
+    </div>
+    <button type="submit" class="btn btn-primary">Check Weather</button>
+  </form>
+  <% if(temperatute !== "")  {%>
+  <hr>
+
+  <div class="container px-4">
+    <h3 class="display-5" style="text-align: center;"><%=cityName%>'s Report </h3>
+    <div class="row gx-5" >
+      <div class="col" style="margin-top: 2px;">
+        <div class="p-3 border bg-light">
+          
+          <table class="table">
+            <!-- <thead>
+              <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+              </tr>
+            </thead> -->
+            <tbody>
+              <tr>
+                <td> Temperature </td>
+                <td><%= temperatute  %> &#8451;</td>
+              </tr>
+              <tr>
+                <td> Feels Like </td>
+                <td>  <%=description %>  </td>
+              </tr>
+              <tr>
+                <tr>
+                  <td> Looks Like </td>
+                  <td> <img src=<%=icon%> height="40px" >  </td>
+                </tr>
+                <tr>
+                <td> Wind Speed </td>
+                <td> <%=windSpeed %> m/s </td>
+              </tr>
+              <tr>
+                <td> Clouds </td>
+                <td> <%=clouds %>% </td>
+              </tr>
+              
+              
+              
+              
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <div class="col" style="margin-top: 2px;">
+        <div class="p-3 border bg-light">
+         
+          <table class="table">
+            <!-- <thead>
+              <tr>
+
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+
+              </tr>
+            </thead> -->
+            <tbody>
+              <tr>
+                <td>Country</td>
+                <td><%= country  %></td>
+
+              </tr>
+              <tr>
+                
+                <td>Coordinates</td>
+                <td>[ <%=latitude %>&#176; N , <%=longitude%>&#176; E ] </td>
+
+              </tr>
+              <tr>
+                <td> Pressure </td>
+                <td> <%=pressure %> hPa </td>
+              </tr>
+
+              <tr>
+                <td> Visibility </td>
+                <td> <%=visibility %> m </td>
+              </tr>
+              <tr>
+                <td> Humidity </td>
+                <td> <%=humidity %>% </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <% }  %>
+</body>
+
+</html>
